@@ -17,6 +17,7 @@ class _ChatScreenState extends State<ChatScreen> {
     final fbm = FirebaseMessaging();
     fbm.requestNotificationPermissions();
     fbm.configure();
+    fbm.subscribeToTopic('chat');
     super.initState();
   }
 
@@ -27,6 +28,7 @@ class _ChatScreenState extends State<ChatScreen> {
         title: Text('Chats'),
         actions: <Widget>[
           DropdownButton(
+              underline: Container(),
               icon: Icon(
                 Icons.more_vert,
                 color: Theme.of(context).primaryIconTheme.color,
